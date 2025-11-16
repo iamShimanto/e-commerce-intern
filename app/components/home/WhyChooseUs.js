@@ -68,7 +68,7 @@ const WhyChooseUs = () => {
             </div>
           </div>
 
-          <CommonBtn variant="primary" size="md" rightIcon={<FaArrowRight />}>
+          <CommonBtn variant="primary" size="md" rightIcon={<FaArrowRight />} href={"/shop"}>
             Shop Now
           </CommonBtn>
         </div>

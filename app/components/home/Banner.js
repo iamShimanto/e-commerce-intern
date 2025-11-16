@@ -35,7 +35,7 @@ const Banner = () => {
               Free shipping on all your order. We deliver, you enjoy.
             </p>
 
-            <CommonBtn rightIcon={<FaArrowRight />}>Shop now</CommonBtn>
+            <CommonBtn rightIcon={<FaArrowRight />} href={"/shop"} >Shop now</CommonBtn>
           </div>
         </div>
       </div>
