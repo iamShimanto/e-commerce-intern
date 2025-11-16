@@ -1,102 +1,102 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 import logo from "@/public/images/logo.png";
-import { FaBagShopping, FaUser } from "react-icons/fa6";
+import { FaBagShopping, FaBars, FaUser } from "react-icons/fa6";
+import { FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const links = [
+    { name: "Home", path: "/" },
+    { name: "Shop", path: "/shop" },
+    { name: "Blog", path: "/blog" },
+    { name: "About Us", path: "/aboutus" },
+  ];
+
+  const isActive = (path) => pathname === path;
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur shadow">
+    <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur shadow z-50">
       <div className="container">
-        <div className="navbar">
-          <div className="navbar-start">
-            <div className="dropdown">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost lg:hidden"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+        <div className="flex items-center justify-between py-4">
+        
+          <Link href="/" className="flex items-center">
+            <Image src={logo} alt="logo" className="w-auto h-10" />
+          </Link>
+
+      
+          <ul className="hidden lg:flex items-center gap-10 font-medium">
+            {links.map((link) => (
+              <li key={link.path}>
+                <Link
+                  href={link.path}
+                  className={`relative pb-1 transition-all duration-200 ${
+                    isActive(link.path)
+                      ? "text-primary_color font-semibold"
+                      : "text-black_main hover:text-primary_color"
+                  }`}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
-                </svg>
-              </div>
+                  {link.name}
 
-              <ul
-                tabIndex="-1"
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-              >
-                <li>
-                  <Link href="/">Home</Link>
-                </li>
-                <li>
-                  <Link href="/shop">Shop</Link>
-                </li>
-                <li>
-                  <Link href="/blog">Blog</Link>
-                </li>
-                <li>
-                  <Link href="/aboutus">About Us</Link>
-                </li>
-
-                <div className="flex">
-                  <li>
-                    <Link
-                      className="hover:scale-110 duration-200 sm:hidden text-2xl"
-                      href="/cart"
-                    >
-                      <FaBagShopping />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="hover:scale-110 duration-200 sm:hidden text-2xl"
-                      href="/login"
-                    >
-                      <FaUser />
-                    </Link>
-                  </li>
-                </div>
-              </ul>
-            </div>
-
-            <Link href="/" className="btn btn-ghost text-xl">
-              <Image src={logo} alt="logo" />
-            </Link>
-          </div>
-
-          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
-              <li>
-                <Link href="/">Home</Link>
+                  
+                  {isActive(link.path) && (
+                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-primary_color rounded-full"></span>
+                  )}
+                </Link>
               </li>
-              <li>
-                <Link href="/shop">Shop</Link>
-              </li>
-              <li>
-                <Link href="/blog">Blog</Link>
-              </li>
-              <li>
-                <Link href="/aboutus">About Us</Link>
-              </li>
-            </ul>
-          </div>
+            ))}
+          </ul>
 
-          <div className="navbar-end items-center hidden sm:flex gap-3 text-2xl">
-            <Link className="hover:scale-110 duration-200" href="/cart">
+        
+          <div className="hidden sm:flex items-center gap-4 text-2xl">
+            <Link href="/cart" className="hover:scale-110 duration-200">
               <FaBagShopping />
             </Link>
-            <Link className="hover:scale-110 duration-200" href="/login">
+            <Link href="/login" className="hover:scale-110 duration-200">
+              <FaUser />
+            </Link>
+          </div>
+
+         
+          <button className="lg:hidden text-2xl" onClick={() => setOpen(!open)}>
+            {open ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+
+        <div
+          className={`lg:hidden overflow-hidden transition-all duration-300 ${
+            open ? "max-h-96 pb-4" : "max-h-0"
+          }`}
+        >
+          <ul className="flex flex-col gap-4 text-black_main font-medium">
+            {links.map((link) => (
+              <li key={link.path}>
+                <Link
+                  href={link.path}
+                  onClick={() => setOpen(false)}
+                  className={`transition-all duration-200 ${
+                    isActive(link.path)
+                      ? "text-primary_color font-semibold"
+                      : "hover:text-primary_color"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex items-center gap-6 mt-5 text-2xl">
+            <Link href="/cart" className="hover:scale-110 duration-200">
+              <FaBagShopping />
+            </Link>
+            <Link href="/login" className="hover:scale-110 duration-200">
               <FaUser />
             </Link>
           </div>

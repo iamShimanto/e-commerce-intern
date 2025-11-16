@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function Button({
+export default function CommonBtn({
   variant = "primary",
   size = "md",
   fullWidth,
@@ -36,11 +36,14 @@ export default function Button({
   const disabledStyles = "opacity-50 cursor-not-allowed";
   const fullWidthClass = fullWidth ? "w-full" : "";
 
-  const finalClass = `${base} ${sizes[size]} ${
-    variants[variant]
-  } ${fullWidthClass} ${
-    disabled || isLoading ? disabledStyles : ""
-  } ${className}`;
+  const finalClass = `
+    ${base}
+    ${sizes[size]}
+    ${variants[variant]}
+    ${fullWidthClass}
+    ${disabled || isLoading ? disabledStyles : ""}
+    ${className}
+  `;
 
   const content = (
     <>
