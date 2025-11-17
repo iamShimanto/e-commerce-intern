@@ -1,13 +1,12 @@
 import Breadcrumb from "@/app/ui/Breadcrumb";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaStar, FaRegStar, FaPlus, FaMinus, FaHeart } from "react-icons/fa6";
 
 export default async function ProductDetails({ params }) {
   const ids = await params;
   const id = ids.id;
-  console.log(id);
+
 
   const res = await fetch(`https://dummyjson.com/products/${id}`, {
     cache: "no-store",
@@ -18,7 +17,7 @@ export default async function ProductDetails({ params }) {
   }
 
   const product = await res.json();
-  console.log(product);
+
   const {
     title,
     price,

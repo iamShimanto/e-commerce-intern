@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import logo from "@/public/images/logo.png";
+import { FaTimes, FaUserCircle } from "react-icons/fa";
 import { FaBagShopping, FaBars, FaUser } from "react-icons/fa6";
-import { FaTimes } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({ token }) => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -26,12 +26,10 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur shadow z-50">
       <div className="container">
         <div className="flex items-center justify-between py-4">
-        
           <Link href="/" className="flex items-center">
             <Image src={logo} alt="logo" className="w-auto h-10" />
           </Link>
 
-      
           <ul className="hidden lg:flex items-center gap-10 font-medium">
             {links.map((link) => (
               <li key={link.path}>
@@ -45,31 +43,37 @@ const Navbar = () => {
                 >
                   {link.name}
 
-                  
                   {isActive(link.path) && (
-                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-primary_color rounded-full"></span>
+                    <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-primary_color rounded-full"></span>
                   )}
                 </Link>
               </li>
             ))}
           </ul>
 
-        
+          {/* Desktop Icons */}
           <div className="hidden sm:flex items-center gap-4 text-2xl">
             <Link href="/cart" className="hover:scale-110 duration-200">
               <FaBagShopping />
             </Link>
-            <Link href="/login" className="hover:scale-110 duration-200">
-              <FaUser />
-            </Link>
+
+            {token ? (
+              <Link href="/profile" className="hover:scale-110 duration-200">
+                <FaUserCircle />
+              </Link>
+            ) : (
+              <Link href="/login" className="hover:scale-110 duration-200">
+                <FaUser />
+              </Link>
+            )}
           </div>
 
-         
           <button className="lg:hidden text-2xl" onClick={() => setOpen(!open)}>
             {open ? <FaTimes /> : <FaBars />}
           </button>
         </div>
 
+        {/* Mobile Menu */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ${
             open ? "max-h-96 pb-4" : "max-h-0"
@@ -97,9 +101,16 @@ const Navbar = () => {
             <Link href="/cart" className="hover:scale-110 duration-200">
               <FaBagShopping />
             </Link>
-            <Link href="/login" className="hover:scale-110 duration-200">
-              <FaUser />
-            </Link>
+
+            {token ? (
+              <Link href="/profile" className="hover:scale-110 duration-200">
+                <FaUserCircle />
+              </Link>
+            ) : (
+              <Link href="/login" className="hover:scale-110 duration-200">
+                <FaUser />
+              </Link>
+            )}
           </div>
         </div>
       </div>

@@ -2,9 +2,38 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import toast from "react-hot-toast";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const [data, setData] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("https://api.freeapi.app/api/v1/users/login", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+      if (result.success === false) {
+        return toast.error(result.message);
+      }
+      if (result.success === true) {
+        toast.success(result.message);
+        document.cookie = `token=${result?.data?.accessToken}`;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50">
@@ -13,17 +42,23 @@ export default function Login() {
           Sign In
         </h2>
 
-        <form className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <input
-              type="email"
-              placeholder="Email"
+              onChange={(e) =>
+                setData((prev) => ({ ...prev, username: e.target.value }))
+              }
+              type="text"
+              placeholder="Username"
               className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm outline-none focus:border-primary_color"
             />
           </div>
 
           <div className="relative">
             <input
+              onChange={(e) =>
+                setData((prev) => ({ ...prev, password: e.target.value }))
+              }
               type={showPassword ? "text" : "password"}
               placeholder="Password"
               className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm outline-none focus:border-primary_color"

@@ -32,13 +32,13 @@ export default async function Shop({ searchParams }) {
 
   return (
     <>
-      <div>
+      <div className="pt-20">
         <Breadcrumb items={[{ label: "Shop" }]} />
         <DiscountBanner />
         <div className="container">
           <div className="flex items-center justify-between rounded-md">
             <h3 className="text-xl font-medium text-primary/50 my-10">
-              We found <span className="font-bold text-brand">{total}</span>{" "}
+              We found <span className="font-bold text-primary_color">{total}</span>{" "}
               items for you!
             </h3>
 

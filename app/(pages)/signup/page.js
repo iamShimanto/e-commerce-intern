@@ -2,10 +2,45 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirm, setShowConfirm] = useState(false);
+  const [data, setData] = useState({
+    email: "",
+    username: "",
+    password: "",
+  });
+  const router = useRouter();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("https://api.freeapi.app/api/v1/users/register", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+    
+      if (result.success === false) {
+        return toast.error(result.message);
+      }
+
+      if (result.success === true) {
+        toast.success(result.message);
+        setTimeout(() => {
+          router.push("/login");
+        }, 1000);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50">
@@ -14,19 +49,34 @@ export default function Page() {
           Create Account
         </h2>
 
-        <form className="space-y-5">
-  
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <input
+              onChange={(e) =>
+                setData((prev) => ({ ...prev, email: e.target.value }))
+              }
               type="email"
               placeholder="Email"
               className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm outline-none focus:border-primary_color"
             />
           </div>
 
-        
           <div className="relative">
             <input
+              onChange={(e) =>
+                setData((prev) => ({ ...prev, username: e.target.value }))
+              }
+              type="text"
+              placeholder="Username"
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm outline-none focus:border-primary_color"
+            />
+          </div>
+
+          <div className="relative">
+            <input
+              onChange={(e) =>
+                setData((prev) => ({ ...prev, password: e.target.value }))
+              }
               type={showPassword ? "text" : "password"}
               placeholder="Password"
               className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm outline-none focus:border-primary_color"
@@ -39,28 +89,11 @@ export default function Page() {
             </span>
           </div>
 
-
-          <div className="relative">
-            <input
-              type={showConfirm ? "text" : "password"}
-              placeholder="Confirm Password"
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm outline-none focus:border-primary_color"
-            />
-            <span
-              onClick={() => setShowConfirm(!showConfirm)}
-              className="absolute right-4 top-3.5 cursor-pointer text-gray-400"
-            >
-              {showConfirm ? <FaEyeSlash /> : <FaEye />}
-            </span>
-          </div>
-
-     
           <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
             <input type="checkbox" className="accent-primary_color" />
             Accept all terms & Conditions
           </label>
 
-        
           <button
             type="submit"
             className="w-full bg-primary_color hover:bg-hardprimary text-white font-medium rounded-full py-3 transition"

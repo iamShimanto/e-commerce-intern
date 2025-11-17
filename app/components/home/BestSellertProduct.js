@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 
 const products = async () => {
-  const res = await fetch(`https://dummyjson.com/products?limit=5`, {
+  const res = await fetch(`https://dummyjson.com/products?limit=5&skip=6`, {
     method: "GET",
     cache: "no-store",
   });
