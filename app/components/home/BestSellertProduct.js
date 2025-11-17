@@ -2,45 +2,17 @@ import ProductCard from "@/app/ui/ProductCard";
 import React from "react";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
-import product1 from "@/public/images/product1.png";
-import product2 from "@/public/images/product2.png";
-import product5 from "@/public/images/product5.png";
-import product6 from "@/public/images/product6.png";
-import product7 from "@/public/images/product7.png";
 
-const BestSellerProduct = () => {
-  const products = [
-    {
-      img: product1,
-      title: "Green Apple",
-      price: "14.99",
-      rating: 5,
-    },
-    {
-      img: product2,
-      title: "Chanise Cabbage",
-      price: "14.99",
-      rating: 5,
-    },
-    {
-      img: product5,
-      title: "Green Lettuce",
-      price: "14.99",
-      rating: 5,
-    },
-    {
-      img: product6,
-      title: "Green Chili",
-      price: "14.99",
-      rating: 5,
-    },
-    {
-      img: product7,
-      title: "Corn",
-      price: "14.99",
-      rating: 5,
-    },
-  ];
+const products = async () => {
+  const res = await fetch(`https://dummyjson.com/products?limit=5`, {
+    method: "GET",
+    cache: "no-store",
+  });
+  return await res.json();
+};
+
+const BestSellerProduct = async () => {
+  const data = await products();
 
   return (
     <section className="featureProduct py-20">
@@ -60,14 +32,8 @@ const BestSellerProduct = () => {
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {products.map((item, index) => (
-            <ProductCard
-              key={index}
-              img={item.img}
-              title={item.title}
-              price={item.price}
-              rating={item.rating}
-            />
+          {data?.products?.map((item, index) => (
+            <ProductCard key={item.id} data={item} />
           ))}
         </div>
       </div>

@@ -17,6 +17,7 @@ const Navbar = () => {
     { name: "Shop", path: "/shop" },
     { name: "Blog", path: "/blog" },
     { name: "About Us", path: "/aboutus" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const isActive = (path) => pathname === path;
