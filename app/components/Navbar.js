@@ -7,10 +7,12 @@ import { usePathname } from "next/navigation";
 import logo from "@/public/images/logo.png";
 import { FaTimes, FaUserCircle } from "react-icons/fa";
 import { FaBagShopping, FaBars, FaUser } from "react-icons/fa6";
+import { useCart } from "../context/CartContext";
 
 const Navbar = ({ token }) => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { cart } = useCart();
 
   const links = [
     { name: "Home", path: "/" },
@@ -51,11 +53,16 @@ const Navbar = ({ token }) => {
             ))}
           </ul>
 
-          {/* Desktop Icons */}
           <div className="hidden sm:flex items-center gap-4 text-2xl">
-            <Link href="/cart" className="hover:scale-110 duration-200">
-              <FaBagShopping />
-            </Link>
+            {cart.length > 0 ? (
+              <Link href="/cart" className="hover:scale-110 duration-200 ">
+                <FaBagShopping className="text-primary_color" />
+              </Link>
+            ) : (
+              <Link href="/cart" className="hover:scale-110 duration-200 ">
+                <FaBagShopping />
+              </Link>
+            )}
 
             {token ? (
               <Link href="/profile" className="hover:scale-110 duration-200">
@@ -73,7 +80,6 @@ const Navbar = ({ token }) => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ${
             open ? "max-h-96 pb-4" : "max-h-0"
@@ -98,9 +104,15 @@ const Navbar = ({ token }) => {
           </ul>
 
           <div className="flex items-center gap-6 mt-5 text-2xl">
-            <Link href="/cart" className="hover:scale-110 duration-200">
-              <FaBagShopping />
-            </Link>
+            {cart.length > 0 ? (
+              <Link href="/cart" className="hover:scale-110 duration-200 ">
+                <FaBagShopping className="text-primary_color" />
+              </Link>
+            ) : (
+              <Link href="/cart" className="hover:scale-110 duration-200 ">
+                <FaBagShopping />
+              </Link>
+            )}
 
             {token ? (
               <Link href="/profile" className="hover:scale-110 duration-200">
