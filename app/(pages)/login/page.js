@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -10,6 +11,7 @@ export default function Login() {
     username: "",
     password: "",
   });
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,6 +31,10 @@ export default function Login() {
       if (result.success === true) {
         toast.success(result.message);
         document.cookie = `token=${result?.data?.accessToken}`;
+        setTimeout(() => {
+          router.push("/");
+          location.reload();
+        }, 1000);
       }
     } catch (error) {
       console.log(error);

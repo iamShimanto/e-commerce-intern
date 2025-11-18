@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function NotFound() {
   return (
     <div className="container py-20 flex flex-col items-center text-center mt-20">
@@ -11,12 +13,12 @@ export default function NotFound() {
           or the link is incorrect.
         </p>
 
-        <a
+        <Link
           href="/shop"
           className="bg-primary_color text-white px-8 py-3 rounded-full hover:bg-hardprimary transition text-lg font-semibold"
         >
           Back to Shop
-        </a>
+        </Link>
       </div>
     </div>
   );

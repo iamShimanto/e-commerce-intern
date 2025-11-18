@@ -26,7 +26,7 @@ export default function Page() {
       });
 
       const result = await res.json();
-    
+
       if (result.success === false) {
         return toast.error(result.message);
       }

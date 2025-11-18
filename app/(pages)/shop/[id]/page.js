@@ -7,9 +7,10 @@ export default async function ProductDetails({ params }) {
   const ids = await params;
   const id = ids.id;
 
-
   const res = await fetch(`https://dummyjson.com/products/${id}`, {
-    cache: "no-store",
+    next: {
+      revalidate: 30,
+    },
   });
 
   if (!res.ok) {
@@ -59,7 +60,7 @@ export default async function ProductDetails({ params }) {
               >
                 <Image
                   src={img}
-                  alt={`Thumbnail ${i}`}
+                  alt={title}
                   width={200}
                   height={150}
                   className="h-24 w-full object-cover"
@@ -93,7 +94,6 @@ export default async function ProductDetails({ params }) {
 
           <p className="text-gray-600 mt-6">{description}</p>
 
-      
           <p className="mt-4 text-sm">
             Stock:{" "}
             <span

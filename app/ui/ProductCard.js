@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaHeart, FaRegEye, FaShoppingBag } from "react-icons/fa";
+import AddToCartButton from "./AddToCartButton";
 
 const ProductCard = ({ data }) => {
- 
-
   return (
     <>
       <div className="group rounded-2xl border border-gray-300 hover:border-primary_color shadow-md p-4 bg-white relative hover:shadow-green-200 duration-300 overflow-hidden">
@@ -29,13 +28,16 @@ const ProductCard = ({ data }) => {
         </div>
 
         <Link href={`/shop/${data?.id}`} className="mt-4">
-          <h3 className="text-lg font-medium text-black_main">{data?.title.substring(0,20)}...</h3>
+          <h3 className="text-lg font-medium text-black_main">
+            {data?.title.substring(0, 20)}...
+          </h3>
           <p className="text-xl font-semibold mt-1">${data?.price}</p>
         </Link>
 
-        <button className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-gray-300 text-softprimary flex items-center justify-center text-lg hover:bg-green-600 hover:text-white duration-200 cursor-pointer">
+        {/* <button className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-gray-300 text-softprimary flex items-center justify-center text-lg hover:bg-green-600 hover:text-white duration-200 cursor-pointer">
           <FaShoppingBag />
-        </button>
+        </button> */}
+        <AddToCartButton product={data} />
       </div>
     </>
   );

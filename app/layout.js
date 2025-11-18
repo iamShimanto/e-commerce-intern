@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 import { cookies } from "next/headers";
+import { CartProvider } from "./context/CartContext";
 
 export const metadata = {
   title: "Shopery E-Commerce",
@@ -12,21 +13,24 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   const cookieStore = await cookies();
   const token = await cookieStore.get("token")?.value;
+
   return (
-    <html lang="en">
+    <html>
+      <head>
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+      </head>
       <body>
-        <head>
-          <link
-            rel="icon"
-            href="/icon?<generated>"
-            type="image/<generated>"
-            sizes="<generated>"
-          />
-        </head>
         <Toaster position="top-center" reverseOrder={false} />
-        <Navbar token={token} />
-        {children}
-        <Footer />
+        <CartProvider>
+          <Navbar token={token} />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
