@@ -5,14 +5,18 @@ import LimitSelector from "@/app/components/shop/LimitSelector";
 import ProductCard from "@/app/ui/ProductCard";
 
 const ProductData = async ({ limit, skip }) => {
-  const res = await fetch(
-    `https://dummyjson.com/products?limit=${limit}&skip=${skip}`,
-    {
-      method: "GET",
-      cache: "no-store",
-    }
-  );
-  return await res.json();
+  try {
+    const res = await fetch(
+      `https://dummyjson.com/products?limit=${limit}&skip=${skip}`,
+      {
+        method: "GET",
+        cache: "no-store",
+      }
+    );
+    return await res.json();
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export default async function Shop({ searchParams }) {
@@ -38,7 +42,8 @@ export default async function Shop({ searchParams }) {
         <div className="container">
           <div className="flex items-center justify-between rounded-md">
             <h3 className="text-xl font-medium text-primary/50 my-10">
-              We found <span className="font-bold text-primary_color">{total}</span>{" "}
+              We found{" "}
+              <span className="font-bold text-primary_color">{total}</span>{" "}
               items for you!
             </h3>
 

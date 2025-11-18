@@ -34,9 +34,6 @@ const ProductCard = ({ data }) => {
           <p className="text-xl font-semibold mt-1">${data?.price}</p>
         </Link>
 
-        {/* <button className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-gray-300 text-softprimary flex items-center justify-center text-lg hover:bg-green-600 hover:text-white duration-200 cursor-pointer">
-          <FaShoppingBag />
-        </button> */}
         <AddToCartButton product={data} />
       </div>
     </>

@@ -11,8 +11,13 @@ import { useCart } from "../context/CartContext";
 
 const Navbar = ({ token }) => {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const { cart } = useCart();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const links = [
     { name: "Home", path: "/" },
@@ -54,15 +59,15 @@ const Navbar = ({ token }) => {
           </ul>
 
           <div className="hidden sm:flex items-center gap-4 text-2xl">
-            {cart.length > 0 ? (
-              <Link href="/cart" className="hover:scale-110 duration-200 ">
-                <FaBagShopping className="text-primary_color" />
-              </Link>
-            ) : (
-              <Link href="/cart" className="hover:scale-110 duration-200 ">
-                <FaBagShopping />
-              </Link>
-            )}
+            {/* ====== cart icon hydrated fix ============= */}
+            <Link
+              href="/cart"
+              className={`hover:scale-110 duration-200 ${
+                mounted && cart.length > 0 ? "text-primary_color" : ""
+              }`}
+            >
+              <FaBagShopping />
+            </Link>
 
             {token ? (
               <Link href="/profile" className="hover:scale-110 duration-200">
@@ -80,6 +85,7 @@ const Navbar = ({ token }) => {
           </button>
         </div>
 
+        {/* ====== mobile menu ============= */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ${
             open ? "max-h-96 pb-4" : "max-h-0"
@@ -104,15 +110,13 @@ const Navbar = ({ token }) => {
           </ul>
 
           <div className="flex items-center gap-6 mt-5 text-2xl">
-            {cart.length > 0 ? (
-              <Link href="/cart" className="hover:scale-110 duration-200 ">
-                <FaBagShopping className="text-primary_color" />
-              </Link>
-            ) : (
-              <Link href="/cart" className="hover:scale-110 duration-200 ">
-                <FaBagShopping />
-              </Link>
-            )}
+            <Link href="/cart" className="hover:scale-110 duration-200">
+              <FaBagShopping
+                className={
+                  mounted && cart.length > 0 ? "text-primary_color" : ""
+                }
+              />
+            </Link>
 
             {token ? (
               <Link href="/profile" className="hover:scale-110 duration-200">

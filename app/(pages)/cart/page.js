@@ -12,7 +12,9 @@ export default function CartPage() {
 
   return (
     <div className="mt-20">
-      <Breadcrumb items={[{ label: "Cart" }]} />
+      <Breadcrumb
+        items={[{ label: "Shop", href: "/shop" }, { label: "Cart" }]}
+      />
 
       <div className="container mb-10 pb-5">
         <h2 className="text-[32px] font-semibold text-black_main text-center py-10">
