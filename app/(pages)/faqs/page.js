@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const page = () => {
   return (
-    <div className="mt-20">
+    <div className="mt-20 ">
       <Breadcrumb items={[{ label: "FAQs" }]} />
       <div className="container py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-18">

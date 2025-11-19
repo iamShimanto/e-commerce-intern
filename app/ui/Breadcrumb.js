@@ -4,7 +4,7 @@ import { FaAngleRight } from "react-icons/fa6";
 
 const Breadcrumb = ({ items = [] }) => {
   return (
-    <div className="bread">
+    <div className="bread mb-2">
       <div className="flex items-center gap-2 text-sm py-6 container">
         <Link
           href="/"
