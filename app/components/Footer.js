@@ -13,6 +13,7 @@ import mastercard from "@/public/images/mastercard.png";
 import discover from "@/public/images/discover.png";
 import applePay from "@/public/images/applepay.png";
 import securePayment from "@/public/images/securepayment.png";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -29,18 +30,30 @@ const Footer = () => {
           </p>
 
           <div className="flex items-center gap-4 text-xl">
-            <a className="w-10 h-10 rounded-full bg-primary_color flex items-center justify-center hover:opacity-80 duration-200">
+            <Link
+              href={"/"}
+              className="w-10 h-10 rounded-full bg-primary_color flex items-center justify-center hover:opacity-80 duration-200"
+            >
               <FaFacebookF />
-            </a>
-            <a className="text-secondary_color hover:text-white duration-200">
+            </Link>
+            <Link
+              href={"/"}
+              className="text-secondary_color hover:text-white duration-200"
+            >
               <FaTwitter />
-            </a>
-            <a className="text-secondary_color hover:text-white duration-200">
+            </Link>
+            <Link
+              href={"/"}
+              className="text-secondary_color hover:text-white duration-200"
+            >
               <FaPinterestP />
-            </a>
-            <a className="text-secondary_color hover:text-white duration-200">
+            </Link>
+            <Link
+              href={"/"}
+              className="text-secondary_color hover:text-white duration-200"
+            >
               <FaInstagram />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -48,16 +61,16 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">My Account</h3>
           <ul className="text-secondary_color space-y-3">
             <li className="hover:text-white duration-200 cursor-pointer">
-              My Account
+              <Link href={"/profile"}>My Account</Link>
             </li>
             <li className="hover:text-white duration-200 cursor-pointer">
-              Order History
+              <Link href={"/"}>Order History</Link>
             </li>
             <li className="hover:text-white duration-200 cursor-pointer">
-              Shoping Cart
+              <Link href={"/cart"}>Shoping Cart</Link>
             </li>
             <li className="hover:text-white duration-200 cursor-pointer">
-              Wishlist
+              <Link href={"/"}>Wishlist</Link>
             </li>
           </ul>
         </div>
@@ -66,10 +79,10 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">Helps</h3>
           <ul className="text-secondary_color space-y-3">
             <li className="hover:text-white duration-200 cursor-pointer">
-              Contact
+              <Link href={"/contact"}>Contact</Link>
             </li>
             <li className="hover:text-white duration-200 cursor-pointer">
-              Faqs
+              <Link href={"/faqs"}>Faqs</Link>
             </li>
             <li className="hover:text-white duration-200 cursor-pointer">
               Terms & Condition

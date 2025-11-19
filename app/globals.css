@@ -18,3 +18,9 @@ body {
   --color-secondary_color: #808080;
   --color-black_main : #1A1A1A;
 }
+
+
+.bread{
+  background-image: url("../public/images/bread.png");
+  @apply h-full
+}

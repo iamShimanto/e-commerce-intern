@@ -83,11 +83,11 @@ export default function Dashboard() {
           </ul>
         </aside>
 
-        {/* MAIN CONTENT */}
+   
         <main className="lg:col-span-4 space-y-6">
-          {/* PROFILE INFO */}
+       
           <div className="grid sm:grid-cols-2 gap-6">
-            {/* Profile Card */}
+            
             <div className="border rounded-xl p-6 flex flex-col items-center justify-center text-center">
               <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
                 <Image
@@ -107,7 +107,7 @@ export default function Dashboard() {
               </button>
             </div>
 
-            {/* Address Card */}
+           
             <div className="border rounded-xl p-6">
               <h4 className="text-sm font-semibold text-black_main mb-2">
                 Billing Address
@@ -128,7 +128,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* ORDER HISTORY */}
+          
           <div className="border rounded-xl p-6 overflow-x-auto">
             <div className="flex items-center justify-between mb-4">
               <h4 className="text-sm font-semibold text-black_main">
