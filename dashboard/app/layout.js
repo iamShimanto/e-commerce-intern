@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       <body className="flex mt-20">
         <DashboardLayout />
 
-        <div className="ml-57 w-full pr-6">{children}</div>
+        <div className="md:ml-57 w-full pr-6">{children}</div>
       </body>
     </html>
   );

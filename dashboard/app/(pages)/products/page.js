@@ -1,9 +1,12 @@
-import React from 'react'
+import AllProducts from "@/app/components/products/AllProducts";
+import React from "react";
 
 const page = () => {
   return (
-    <div className='text-white'>page</div>
-  )
-}
+    <div className="mt-10 ml-6">
+      <AllProducts />
+    </div>
+  );
+};
 
-export default page
+export default page;
