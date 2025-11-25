@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react'
 import { FaStar } from 'react-icons/fa';
 import { FiMoreVertical } from 'react-icons/fi';
@@ -8,7 +9,7 @@ const GridView = ({products}) => {
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {products.map((p) => (
-          <div
+          <Link href={"/products/1"}
             key={p.id}
             className="rounded-2xl border border-white/10 bg-dark_bg p-4 shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:bg-white/5 transition"
           >
@@ -52,7 +53,7 @@ const GridView = ({products}) => {
                 {p.sales}
               </span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </>

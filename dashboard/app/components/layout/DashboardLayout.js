@@ -31,7 +31,7 @@ export default function DashboardLayout({ children, user }) {
           sidebarOpen={sidebarOpen}
           onToggleSidebar={() => setSidebarOpen((v) => !v)}
         />
-        <main className="p-4 sm:p-6 lg:p-8">{children}</main>
+        <main className="p-4 sm:p-6 lg:p-8 w-full">{children}</main>
       </div>
     </div>
   );

@@ -40,7 +40,7 @@ export default function VisitsBySource() {
   };
 
   return (
-    <div className="w-full rounded-2xl bg-dark_bg border border-white/10 p-5 shadow-[0_8px_30px_rgba(0,0,0,0.3)]">
+    <div className="w-full rounded-2xl bg-dark_bg border border-white/10 p-5 shadow-[0_8px_30px_rgba(0,0,0,0.3)] overflow-x-hidden">
       <div className="flex items-center justify-between mb-2">
         <h3 className="text-sm sm:text-base font-semibold text-primary_color">
           Visits by Source

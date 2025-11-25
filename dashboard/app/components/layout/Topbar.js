@@ -9,6 +9,12 @@ import {
   FiBell,
   FiMenu,
   FiX,
+  FiGrid,
+  FiShoppingBag,
+  FiFileText,
+  FiCreditCard,
+  FiRepeat,
+  FiUsers,
 } from "react-icons/fi";
 import { useState } from "react";
 import Image from "next/image";
@@ -24,8 +30,17 @@ export default function Topbar({
 }) {
   const [open, setOpen] = useState(false);
 
+  const navItems = [
+    { label: "Dashboard", href: "/", icon: FiGrid },
+    { label: "Products", href: "/products", icon: FiShoppingBag },
+    { label: "Orders", href: "/orders", icon: FiFileText },
+    { label: "Payments", href: "/payments", icon: FiCreditCard },
+    { label: "Transactions", href: "/transactions", icon: FiRepeat },
+    { label: "Clients", href: "/clients", icon: FiUsers },
+  ];
+
   return (
-    <header className="w-full bg-dark_bg fixed top-0 z-50 border-b border-white/5">
+    <header className="w-full bg-dark_bg fixed top-0 z-50 border-b border-white/5 px-1">
       <div className="h-16 md:h-20 px-3 sm:px-5 md:px-6 lg:px-8 flex items-center gap-2 sm:gap-3">
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <button
@@ -110,7 +125,7 @@ export default function Topbar({
       <div
         className={`md:hidden origin-top transition-all duration-200 ease-out ${
           sidebarOpen ?? open
-            ? "max-h-40 opacity-100 scale-y-100"
+            ? "max-h-140 opacity-100 scale-y-100"
             : "max-h-0 opacity-0 scale-y-95"
         }`}
       >
@@ -120,12 +135,19 @@ export default function Topbar({
             <span>Browse</span>
             <FiChevronDown className="text-base opacity-60" />
           </button>
-            
+
           <button className="relative ml-auto sm:hidden h-9 w-9 grid place-items-center rounded-full hover:bg-white/5 transition">
             <FiMessageSquare className="text-primary_color/60 text-lg" />
             <span className="absolute top-2 right-2 h-2.5 w-2.5 rounded-full bg-brand_color ring-2 ring-dark_bg"></span>
           </button>
         </div>
+        <ul className="flex flex-col gap-3 text-white my-2 items-center">
+          {navItems.map((item, index) => (
+            <li key={index} className="bg-brand_color w-40 py-2 text-center rounded-2xl">
+              <Link href={item.href}>{item.label}</Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </header>
   );
