@@ -37,14 +37,14 @@ const Navbar = ({ token }) => {
             <Image src={logo} alt="logo" className="w-auto h-10" />
           </Link>
 
-          <ul className="hidden lg:flex items-center gap-10 font-medium">
+          <ul className="hidden lg:flex items-center gap-10 font-medium bg-slate-200 px-6 py-3 rounded-2xl backdrop-blur-2xl">
             {links.map((link) => (
               <li key={link.path}>
                 <Link
                   href={link.path}
                   className={`relative pb-1 transition-all duration-200 ${
                     isActive(link.path)
-                      ? "text-primary_color font-semibold"
+                      ? "text-primary_color font-bold"
                       : "text-black_main hover:text-primary_color"
                   }`}
                 >

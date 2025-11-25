@@ -96,10 +96,10 @@ export default function BestSellers() {
       </div>
 
       <div className="space-y-4">
-        {sellers.map((s) => (
+        {sellers.slice(0, 5).map((s) => (
           <div
             key={s.id}
-            className="flex items-center justify-between text-sm text-primary_color/70"
+            className="flex items-center justify-between text-sm text-primary_color/70 add"
           >
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-full overflow-hidden">

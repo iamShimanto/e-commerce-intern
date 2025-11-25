@@ -11,7 +11,7 @@ const GridView = ({products}) => {
         {products.map((p) => (
           <Link href={"/products/1"}
             key={p.id}
-            className="rounded-2xl border border-white/10 bg-dark_bg p-4 shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:bg-white/5 transition"
+            className="rounded-2xl border border-white/10 bg-dark_bg p-4 shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:bg-white/8 transition"
           >
             <div className="flex justify-between items-start mb-3">
               <Image

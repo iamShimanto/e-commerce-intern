@@ -24,7 +24,7 @@ export default function CommonBtn({
   };
 
   const variants = {
-    primary: "bg-primary_color text-white hover:bg-hardprimary",
+    primary: "bg-primary_color text-white hover:bg-slate-700 hover:backdrop-blur-2xl",
     soft: "bg-softprimary text-black_main hover:bg-primary_color hover:text-white",
     secondary: "bg-secondary_color text-white hover:bg-black_main",
     outline:

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const CategoryCard = ({ icon, title, count }) => {
   return (
-    <div className="rounded-2xl border border-[#00B528] hover:border-black  bg-white p-6 text-center shadow-md hover:shadow-green-200 duration-300 cursor-pointer h-52.5">
+    <div className="rounded-2xl border border-[#00B528] hover:border-black  bg-slate-100 backdrop-blur-lg p-6 text-center shadow-md hover:shadow-green-200 duration-300 cursor-pointer h-52.5">
       <div className="flex justify-center mb-4">
         <Image
           src={icon}
