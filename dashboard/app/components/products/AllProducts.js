@@ -1,61 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiList, FiGrid } from "react-icons/fi";
 import ListView from "./ListView";
 import GridView from "./GridView";
 import Breadcrumb from "../ui/BreadCrumb";
+import { productData } from "./productData";
 
-const products = [
-  {
-    id: 1,
-    name: "Cubitt Smart Watch",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    price: "$576.28",
-    sku: "FROX-13563",
-    status: "Active",
-    qty: 556,
-    rating: 5,
-    sales: "186 / 2058",
-    image: "/images/watch1.png",
-  },
-  {
-    id: 2,
-    name: "Cubitt Smart Watch",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    price: "$576.28",
-    sku: "FROX-13563",
-    status: "Active",
-    qty: 556,
-    rating: 5,
-    sales: "186 / 2058",
-    image: "/images/headphone1.png",
-  },
-  {
-    id: 3,
-    name: "Cubitt Smart Watch",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    price: "$576.28",
-    sku: "FROX-13563",
-    status: "Active",
-    qty: 556,
-    rating: 5,
-    sales: "186 / 2058",
-    image: "/images/headphone2.png",
-  },
-  {
-    id: 4,
-    name: "Cubitt Smart Watch",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    price: "$576.28",
-    sku: "FROX-13563",
-    status: "Active",
-    qty: 556,
-    rating: 5,
-    sales: "186 / 2058",
-    image: "/images/watch2.png",
-  },
-];
+const products = productData;
 
 export default function AllProducts() {
   const [view, setView] = useState("grid");
@@ -65,7 +17,7 @@ export default function AllProducts() {
 
   return (
     <div className="w-full space-y-6">
-      <div className="flex flex-col sm:flex-row items-center justify-between flex-wrap gap-3 relative z-50">
+      <div className="flex flex-col sm:flex-row items-center justify-between flex-wrap gap-3 relative">
         <h2 className="text-lg sm:text-xl font-bold text-primary_color">
           All Products
         </h2>
@@ -100,10 +52,7 @@ export default function AllProducts() {
       </div>
       <div>
         <Breadcrumb
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Products" }
-          ]}
+          items={[{ label: "Home", href: "/" }, { label: "Products" }]}
         />
       </div>
 

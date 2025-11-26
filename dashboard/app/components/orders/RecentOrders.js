@@ -4,159 +4,9 @@ import Image from "next/image";
 import { FiMoreVertical } from "react-icons/fi";
 import Breadcrumb from "../ui/BreadCrumb";
 import Link from "next/link";
+import { ordersdata } from "./orderdata";
 
-const orders = [
-  {
-    id: 1,
-    orderId: "#25413",
-    customer: "Jerome Bell",
-    avatar: "/images/user1.png",
-    method: "American Express",
-    date: "17 Oct, 2022",
-    status: "Delivered",
-    total: "$106.58",
-  },
-  {
-    id: 2,
-    orderId: "#25413",
-    customer: "Cody Fisher",
-    avatar: "/images/user2.png",
-    method: "PayPal",
-    date: "1 Feb, 2022",
-    status: "Pending",
-    total: "$710.68",
-  },
-  {
-    id: 3,
-    orderId: "#25413",
-    customer: "Wade Warren",
-    avatar: "/images/user3.png",
-    method: "Check",
-    date: "8 Sep, 2022",
-    status: "Delivered",
-    total: "$406.27",
-  },
-  {
-    id: 4,
-    orderId: "#25413",
-    customer: "Savannah Nguyen",
-    avatar: "/images/user4.png",
-    method: "PayPal",
-    date: "17 Oct, 2022",
-    status: "Canceled",
-    total: "$943.65",
-  },
-  {
-    id: 5,
-    orderId: "#25413",
-    customer: "Savannah Nguyen",
-    avatar: "/images/user4.png",
-    method: "Visa",
-    date: "21 Sep, 2022",
-    status: "Canceled",
-    total: "$943.65",
-  },
-  {
-    id: 6,
-    orderId: "#25413",
-    customer: "Savannah Nguyen",
-    avatar: "/images/user4.png",
-    method: "Cash",
-    date: "21 Sep, 2022",
-    status: "Canceled",
-    total: "$943.65",
-  },
-  {
-    id: 7,
-    orderId: "#25413",
-    customer: "Kathryn Murphy",
-    avatar: "/images/user5.png",
-    method: "Visa",
-    date: "22 Oct, 2022",
-    status: "Delivered",
-    total: "$450.54",
-  },
-  {
-    id: 8,
-    orderId: "#25413",
-    customer: "Kathryn Murphy",
-    avatar: "/images/user5.png",
-    method: "MasterCard",
-    date: "8 Sep, 2022",
-    status: "Delivered",
-    total: "$450.54",
-  },
-  {
-    id: 9,
-    orderId: "#25413",
-    customer: "Kathryn Murphy",
-    avatar: "/images/user5.png",
-    method: "American Express",
-    date: "21 Sep, 2022",
-    status: "Delivered",
-    total: "$450.54",
-  },
-  {
-    id: 10,
-    orderId: "#25413",
-    customer: "Eleanor Pena",
-    avatar: "/images/user6.png",
-    method: "PayPal",
-    date: "17 Oct, 2022",
-    status: "Pending",
-    total: "$219.78",
-  },
-  {
-    id: 11,
-    orderId: "#25413",
-    customer: "Ronald Richards",
-    avatar: "/images/user1.png",
-    method: "Visa",
-    date: "24 May, 2022",
-    status: "Pending",
-    total: "$219.78",
-  },
-  {
-    id: 12,
-    orderId: "#25413",
-    customer: "Jerome Bell",
-    avatar: "/images/user1.png",
-    method: "Visa",
-    date: "24 May, 2022",
-    status: "Pending",
-    total: "$219.78",
-  },
-  {
-    id: 13,
-    orderId: "#25413",
-    customer: "Floyd Miles",
-    avatar: "/images/user1.png",
-    method: "Cash",
-    date: "21 Sep, 2022",
-    status: "Canceled",
-    total: "$576.28",
-  },
-  {
-    id: 14,
-    orderId: "#25413",
-    customer: "Ralph Edwards",
-    avatar: "/images/user1.png",
-    method: "American Express",
-    date: "24 May, 2022",
-    status: "Canceled",
-    total: "$576.28",
-  },
-  {
-    id: 15,
-    orderId: "#25413",
-    customer: "Guy Hawkins",
-    avatar: "/images/user1.png",
-    method: "American Express",
-    date: "17 Oct, 2022",
-    status: "Canceled",
-    total: "$576.28",
-  },
-];
+const orders = ordersdata;
 
 const statusDot = (status) => {
   if (status === "Delivered") return "bg-emerald-400";
@@ -183,7 +33,8 @@ export default function RecentOrders() {
 
         <div className="p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {orders.map((o) => (
-            <Link href={"/orders/1"}
+            <Link
+              href={"/orders/1"}
               key={o.id}
               className="w-full rounded-xl border border-white/10 bg-black/30 p-4 space-y-3 hover:bg-white/5 transition"
             >

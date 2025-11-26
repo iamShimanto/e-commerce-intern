@@ -8,7 +8,7 @@ export default function DashboardLayout({ children, user }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-black flex">
+    <div className="min-h-screen bg-black flex z-50">
       <div
         className={`md:hidden fixed inset-0 z-40 ${
           sidebarOpen ? "block" : "hidden"
@@ -25,7 +25,7 @@ export default function DashboardLayout({ children, user }) {
 
       <Sidebar />
 
-      <div className="flex-1 min-w-0">
+      <div className="flex-1 min-w-0 z-50">
         <Topbar
           user={user}
           sidebarOpen={sidebarOpen}
