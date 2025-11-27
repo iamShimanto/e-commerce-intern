@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { FiLock, FiEye, FiEyeOff, FiShield, FiMail } from "react-icons/fi";
 
@@ -10,13 +9,41 @@ export default function Login({
   title = "Admin-only area",
   subtitle = "You need to provide a password to be able to access this page.",
 }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
   const [show, setShow] = useState(false);
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSubmit?.({ email, password });
+    try {
+      const res = await fetch(
+        "https://dummydashboardapi.vercel.app/api/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+          credentials: "include",
+        }
+      );
+
+      const result = await res.json();
+      console.log(result);
+      if (result.success === false) {
+        return alert(result.message);
+      }
+      if (result.data.user.role !== "admin") {
+        return;
+      }
+      document.cookie = `token=${result.data.token}`;
+      location.reload()
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -44,8 +71,10 @@ export default function Login({
               <FiMail className="absolute left-3 top-1/2 -translate-y-1/2 text-primary_color/40 text-lg" />
               <input
                 type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={user.email}
+                onChange={(e) =>
+                  setUser((prev) => ({ ...prev, email: e.target.value }))
+                }
                 placeholder="admin@example.com"
                 className="w-full h-11 sm:h-12 rounded-lg bg-black/35 border border-white/10 pl-10 pr-4 text-sm text-primary_color outline-none focus:border-white/20 transition"
               />
@@ -62,8 +91,10 @@ export default function Login({
 
               <input
                 type={show ? "text" : "password"}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={user.password}
+                onChange={(e) =>
+                  setUser((prev) => ({ ...prev, password: e.target.value }))
+                }
                 placeholder="••••••••"
                 className="w-full h-11 sm:h-12 rounded-lg bg-black/35 border border-white/10 pl-10 pr-11 text-sm text-primary_color outline-none focus:border-white/20 transition"
               />
@@ -89,7 +120,7 @@ export default function Login({
 
           <button
             type="submit"
-            disabled={loading || !password || !email}
+            disabled={loading || !user.password || !user.email}
             className="w-full h-12 sm:h-[52px] rounded-lg bg-brand_color text-white font-semibold text-sm sm:text-base hover:opacity-90 transition disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {loading ? "Logging in..." : "Login"}
