@@ -1,0 +1,380 @@
+[
+  {
+    "title": "AetherFit Performance T-Shirt",
+    "description": "Breathable, moisture-wicking athletic tee with four-way stretch for training and daily wear.",
+    "Category": "Apparel , Men , Tops",
+    "brand": "AetherFit",
+    "SKU": "AF-MT-1001",
+    "quantity": 180,
+    "regularPrice": 29.99,
+    "salePrice": 22.99,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?tshirt,men,athletic",
+      "https://source.unsplash.com/900x900/?sportswear,tee,fitness",
+      "https://source.unsplash.com/900x900/?running,shirt,apparel"
+    ]
+  },
+  {
+    "title": "LunaGlow Hydrating Face Serum",
+    "description": "Lightweight hyaluronic acid serum with niacinamide to hydrate and brighten skin.",
+    "Category": "Beauty , Skincare , Serums",
+    "brand": "LunaGlow",
+    "SKU": "LG-FS-2002",
+    "quantity": 95,
+    "regularPrice": 34.5,
+    "salePrice": 27.6,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?skincare,serum,bottle",
+      "https://source.unsplash.com/900x900/?beauty,cosmetic,dropper",
+      "https://source.unsplash.com/900x900/?face,serum,product"
+    ]
+  },
+  {
+    "title": "NordWood Bamboo Cutting Board Set",
+    "description": "Set of three eco-friendly bamboo boards with juice grooves and non-slip corners.",
+    "Category": "Home & Kitchen , Kitchen Tools",
+    "brand": "NordWood",
+    "SKU": "NW-CB-3003",
+    "quantity": 60,
+    "regularPrice": 39.99,
+    "salePrice": 31.99,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?cutting-board,bamboo,kitchen",
+      "https://source.unsplash.com/900x900/?kitchen,board,wood",
+      "https://source.unsplash.com/900x900/?food-prep,cuttingboard"
+    ]
+  },
+  {
+    "title": "VoltEdge 65W USB-C Fast Charger",
+    "description": "GaN fast charger with dual USB-C ports for laptops, tablets, and phones.",
+    "Category": "Electronics , Accessories , Chargers",
+    "brand": "VoltEdge",
+    "SKU": "VE-CH-4004",
+    "quantity": 210,
+    "regularPrice": 45.0,
+    "salePrice": 36.0,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?charger,usb-c,adapter",
+      "https://source.unsplash.com/900x900/?charging,phone,accessory",
+      "https://source.unsplash.com/900x900/?electronics,charger,device"
+    ]
+  },
+  {
+    "title": "CedarMist Scented Candle - Ocean Drift",
+    "description": "Soy wax candle with clean burn and sea-salt citrus notes; 40-hour burn time.",
+    "Category": "Home & Living , Decor , Candles",
+    "brand": "CedarMist",
+    "SKU": "CM-CA-5005",
+    "quantity": 140,
+    "regularPrice": 18.75,
+    "salePrice": 14.99,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?candle,home,decor",
+      "https://source.unsplash.com/900x900/?scented-candle,cozy",
+      "https://source.unsplash.com/900x900/?soy-candle,aroma"
+    ]
+  },
+  {
+    "title": "TrailForge Stainless Steel Water Bottle 1L",
+    "description": "Insulated bottle keeps drinks cold 24h/hot 12h with leak-proof cap.",
+    "Category": "Sports & Outdoors , Hydration",
+    "brand": "TrailForge",
+    "SKU": "TF-WB-6006",
+    "quantity": 125,
+    "regularPrice": 27.99,
+    "salePrice": 23.49,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?water-bottle,steel,insulated",
+      "https://source.unsplash.com/900x900/?bottle,hiking,outdoors",
+      "https://source.unsplash.com/900x900/?hydration,travel,bottle",
+      "https://source.unsplash.com/900x900/?thermos,bottle"
+    ]
+  },
+  {
+    "title": "Skyline Minimalist Wallet",
+    "description": "Slim RFID-blocking wallet with aluminum card holder and vegan leather wrap.",
+    "Category": "Accessories , Men , Wallets",
+    "brand": "Skyline",
+    "SKU": "SK-WA-7007",
+    "quantity": 70,
+    "regularPrice": 24.99,
+    "salePrice": 19.99,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?wallet,minimalist,leather",
+      "https://source.unsplash.com/900x900/?mens-wallet,accessory",
+      "https://source.unsplash.com/900x900/?card-holder,wallet"
+    ]
+  },
+  {
+    "title": "BloomCraft Ceramic Planter (Medium)",
+    "description": "Glazed ceramic planter with drainage hole and saucer; ideal for indoor plants.",
+    "Category": "Garden & Outdoor , Planters",
+    "brand": "BloomCraft",
+    "SKU": "BC-PL-8008",
+    "quantity": 55,
+    "regularPrice": 21.0,
+    "salePrice": 17.85,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?ceramic-planter,plant,pot",
+      "https://source.unsplash.com/900x900/?indoor-plant,planter",
+      "https://source.unsplash.com/900x900/?houseplant,pot,decor"
+    ]
+  },
+  {
+    "title": "NovaSound Wireless Earbuds",
+    "description": "Bluetooth 5.3 earbuds with ANC, 30-hour case battery, and touch controls.",
+    "Category": "Electronics , Audio , Earbuds",
+    "brand": "NovaSound",
+    "SKU": "NS-EB-9009",
+    "quantity": 160,
+    "regularPrice": 79.99,
+    "salePrice": 64.99,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?wireless-earbuds,headphones,audio",
+      "https://source.unsplash.com/900x900/?earbuds,bluetooth,tech",
+      "https://source.unsplash.com/900x900/?listening,music,earphones"
+    ]
+  },
+  {
+    "title": "PureNest Cotton Bedsheet Set (Queen)",
+    "description": "300-thread-count breathable cotton sheets with deep pockets and satin finish.",
+    "Category": "Home & Living , Bedding",
+    "brand": "PureNest",
+    "SKU": "PN-BS-1010",
+    "quantity": 40,
+    "regularPrice": 54.0,
+    "salePrice": 45.9,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?bedsheet,bedding,bed",
+      "https://source.unsplash.com/900x900/?bedroom,linen,sheets",
+      "https://source.unsplash.com/900x900/?cotton-sheets,bed"
+    ]
+  },
+  {
+    "title": "KiteRunner Kids Scooter",
+    "description": "Adjustable 3-wheel scooter with LED wheels and anti-slip deck for ages 4–10.",
+    "Category": "Toys & Games , Outdoor Play",
+    "brand": "KiteRunner",
+    "SKU": "KR-SC-1111",
+    "quantity": 85,
+    "regularPrice": 59.99,
+    "salePrice": 49.99,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?kids-scooter,child,toy",
+      "https://source.unsplash.com/900x900/?scooter,outdoor,kids",
+      "https://source.unsplash.com/900x900/?playground,scooter"
+    ]
+  },
+  {
+    "title": "BrewMate French Press 1.2L",
+    "description": "Heat-resistant borosilicate glass press with stainless steel filter.",
+    "Category": "Home & Kitchen , Coffee & Tea",
+    "brand": "BrewMate",
+    "SKU": "BM-FP-1212",
+    "quantity": 90,
+    "regularPrice": 32.5,
+    "salePrice": 26.0,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?french-press,coffee,brewing",
+      "https://source.unsplash.com/900x900/?coffee-maker,kitchen",
+      "https://source.unsplash.com/900x900/?coffee,press,glass"
+    ]
+  },
+  {
+    "title": "UrbanRove Laptop Backpack 20L",
+    "description": "Water-resistant backpack with padded 15.6\" laptop sleeve and USB pass-through.",
+    "Category": "Bags , Backpacks",
+    "brand": "UrbanRove",
+    "SKU": "UR-BP-1313",
+    "quantity": 110,
+    "regularPrice": 49.99,
+    "salePrice": 39.99,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?laptop-backpack,bag,travel",
+      "https://source.unsplash.com/900x900/?backpack,urban,commuter",
+      "https://source.unsplash.com/900x900/?school-bag,backpack"
+    ]
+  },
+  {
+    "title": "Solaris Polarized Sunglasses",
+    "description": "UV400 polarized lenses with lightweight TR90 frame for all-day comfort.",
+    "Category": "Accessories , Sunglasses",
+    "brand": "Solaris",
+    "SKU": "SO-SG-1414",
+    "quantity": 150,
+    "regularPrice": 28.0,
+    "salePrice": 21.0,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?sunglasses,polarized,style",
+      "https://source.unsplash.com/900x900/?shades,summer,fashion",
+      "https://source.unsplash.com/900x900/?eyewear,sunglass"
+    ]
+  },
+  {
+    "title": "FrostPeak Winter Beanie",
+    "description": "Soft knit beanie with fleece lining to keep warmth in cold weather.",
+    "Category": "Apparel , Unisex , Winterwear",
+    "brand": "FrostPeak",
+    "SKU": "FP-BE-1515",
+    "quantity": 200,
+    "regularPrice": 14.99,
+    "salePrice": 11.99,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?beanie,winter,knit",
+      "https://source.unsplash.com/900x900/?hat,beanie,cold-weather"
+    ]
+  },
+  {
+    "title": "GlowGrid Mechanical Keyboard (Blue Switch)",
+    "description": "Full-size mechanical keyboard with RGB backlight and double-shot keycaps.",
+    "Category": "Electronics , Computer Accessories , Keyboards",
+    "brand": "GlowGrid",
+    "SKU": "GG-KB-1616",
+    "quantity": 65,
+    "regularPrice": 89.99,
+    "salePrice": 74.99,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?mechanical-keyboard,keyboard,desk",
+      "https://source.unsplash.com/900x900/?gaming-keyboard,rgb",
+      "https://source.unsplash.com/900x900/?computer-keyboard,setup"
+    ]
+  },
+  {
+    "title": "EcoSip Reusable Metal Straw Kit",
+    "description": "Set of 8 stainless steel straws with cleaning brushes and travel pouch.",
+    "Category": "Home & Kitchen , Reusables",
+    "brand": "EcoSip",
+    "SKU": "ES-ST-1717",
+    "quantity": 300,
+    "regularPrice": 9.99,
+    "salePrice": 7.49,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?metal-straw,reusable,eco",
+      "https://source.unsplash.com/900x900/?straws,zero-waste",
+      "https://source.unsplash.com/900x900/?eco-friendly,kitchen"
+    ]
+  },
+  {
+    "title": "PeakPulse Smart Fitness Band",
+    "description": "Fitness tracker with heart-rate, SpO2, sleep tracking, and 7-day battery.",
+    "Category": "Electronics , Wearables",
+    "brand": "PeakPulse",
+    "SKU": "PP-FB-1818",
+    "quantity": 130,
+    "regularPrice": 49.0,
+    "salePrice": 42.0,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?fitness-band,smartwatch,wearable",
+      "https://source.unsplash.com/900x900/?activity-tracker,fitness",
+      "https://source.unsplash.com/900x900/?smart-band,health"
+    ]
+  },
+  {
+    "title": "VelvetAura Matte Lipstick - Rosewood",
+    "description": "Long-lasting matte lipstick enriched with vitamin E for smooth application.",
+    "Category": "Beauty , Makeup , Lips",
+    "brand": "VelvetAura",
+    "SKU": "VA-LS-1919",
+    "quantity": 75,
+    "regularPrice": 16.5,
+    "salePrice": 13.2,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?lipstick,makeup,beauty",
+      "https://source.unsplash.com/900x900/?cosmetics,lip,color",
+      "https://source.unsplash.com/900x900/?makeup-product,lipstick"
+    ]
+  },
+  {
+    "title": "IronClad Cast Iron Skillet 12\"",
+    "description": "Pre-seasoned cast iron pan for searing, baking, and oven-safe cooking.",
+    "Category": "Home & Kitchen , Cookware",
+    "brand": "IronClad",
+    "SKU": "IC-CI-2020",
+    "quantity": 45,
+    "regularPrice": 44.99,
+    "salePrice": 38.24,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?cast-iron-skillet,pan,cooking",
+      "https://source.unsplash.com/900x900/?skillet,kitchen,food",
+      "https://source.unsplash.com/900x900/?cookware,cast-iron"
+    ]
+  },
+  {
+    "title": "ZenSip Insulated Travel Mug 450ml",
+    "description": "Double-wall insulated mug with spill-proof lid for coffee on the go.",
+    "Category": "Home & Kitchen , Drinkware",
+    "brand": "ZenSip",
+    "SKU": "ZS-TM-2121",
+    "quantity": 170,
+    "regularPrice": 19.99,
+    "salePrice": 15.99,
+    "taxstatus": "taxable",
+    "taxclass": "standard",
+    "status": "pending",
+    "images": [
+      "https://source.unsplash.com/900x900/?travel-mug,coffee,mug",
+      "https://source.unsplash.com/900x900/?thermo-mug,drinkware",
+      "https://source.unsplash.com/900x900/?coffee-cup,to-go"
+    ]
+  }
+]

@@ -11,9 +11,15 @@ const products = productData;
 
 export default function AllProducts() {
   const [view, setView] = useState("grid");
+  const [data, setData] = useState([]);
 
-  const isList = view === "list";
-  const isGrid = view === "grid";
+  useEffect(() => {
+    (async () => {
+      const res = await fetch("https://dummyjson.com/products");
+      const result = await res.json();
+      setData(result.products);
+    })();
+  }, []);
 
   return (
     <div className="w-full space-y-6">
@@ -22,33 +28,7 @@ export default function AllProducts() {
           All Products
         </h2>
 
-        <div className="flex items-center bg-[#2A2B33] rounded-full overflow-hidden relative">
-          <button
-            type="button"
-            onClick={() => setView("list")}
-            className={`relative flex items-center gap-2 px-4 py-2 text-sm font-medium transition ${
-              isList
-                ? "bg-brand_color text-white"
-                : "text-primary_color/60 hover:text-primary_color"
-            }`}
-          >
-            <FiList className="text-lg" />
-            List
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setView("grid")}
-            className={`relative flex items-center gap-2 px-4 py-2 text-sm font-medium transition ${
-              isGrid
-                ? "bg-brand_color text-white"
-                : "text-primary_color/60 hover:text-primary_color"
-            }`}
-          >
-            <FiGrid className="text-lg" />
-            Grid
-          </button>
-        </div>
+        <div className="flex items-center bg-[#2A2B33] rounded-full overflow-hidden relative"></div>
       </div>
       <div>
         <Breadcrumb
@@ -56,8 +36,7 @@ export default function AllProducts() {
         />
       </div>
 
-      {isList && <ListView products={products} />}
-      {isGrid && <GridView products={products} />}
+      <GridView products={data} />
     </div>
   );
 }

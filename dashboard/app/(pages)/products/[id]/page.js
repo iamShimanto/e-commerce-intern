@@ -4,7 +4,22 @@ import ProductGallery from "@/app/components/products/ProductGallery";
 import ProductImagePreview from "@/app/components/products/ProductImagePreview";
 import Breadcrumb from "@/app/components/ui/BreadCrumb";
 
-export default function ProductEditor() {
+const singleProduct = async (id) => {
+  const res = await fetch(`https://dummyjson.com/products/${id}`, {
+    next: {
+      revalidate: 30,
+    },
+  });
+  return await res.json();
+};
+
+export default async function ProductEditor({ params }) {
+  const param = await params;
+  const id = param.id;
+
+  const product = await singleProduct(id);
+  // console.log(product);
+
   return (
     <div>
       <div className="heading ml-4 mt-10.5 mb-4.5">
@@ -23,11 +38,11 @@ export default function ProductEditor() {
       </div>
       <div className="w-full rounded-2xl ml-4 bg-dark_bg border border-white/10 p-6 sm:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.3)] grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-8">
         <div className="flex flex-col justify-between">
-          <ProductForm />
+          <ProductForm product={product} />
         </div>
 
         <div className="space-y-8">
-          <ProductImagePreview />
+          <ProductImagePreview product={product} />
           <ProductGallery />
           <ProductActions />
         </div>

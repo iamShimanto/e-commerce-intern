@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function ProductForm() {
+export default function ProductForm({ product }) {
   const [tags, setTags] = useState([
     "smartwatch",
     "Apple",
@@ -10,7 +10,21 @@ export default function ProductForm() {
     "smartphone",
     "iPhone13 max",
   ]);
-
+  const [data, setData] = useState({
+    title: product.title,
+    availabilityStatus: product.availabilityStatus,
+    brand: product.brand,
+    category: product.category,
+    description: product.description,
+    discountPercentage: product.discountPercentage,
+    images: [product.images],
+    price: product.price,
+    rating: product.rating,
+    thumbnail: product.thumbnail,
+    sku: product.sku,
+    stock: product.stock,
+  });
+console.log(data)
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
       <div className="space-y-5">
@@ -20,6 +34,10 @@ export default function ProductForm() {
           </label>
           <input
             type="text"
+            onChange={(e) =>
+              setData((prev) => ({ ...prev, title: e.target.value }))
+            }
+            value={data?.title}
             placeholder="Type name here"
             className="mt-2 w-full rounded-lg bg-black/30 border border-white/10 px-3 py-2 text-sm text-primary_color outline-none"
           />
@@ -30,8 +48,12 @@ export default function ProductForm() {
             Description
           </label>
           <textarea
+            onChange={(e) =>
+              setData((prev) => ({ ...prev, description: e.target.value }))
+            }
             placeholder="Type description here"
             rows={5}
+            value={data.description}
             className="mt-2 w-full rounded-lg bg-black/30 border border-white/10 px-3 py-2 text-sm text-primary_color outline-none resize-none"
           />
         </div>
@@ -42,6 +64,10 @@ export default function ProductForm() {
               Category
             </label>
             <input
+              onChange={(e) =>
+                setData((prev) => ({ ...prev, category: e.target.value }))
+              }
+              value={data.category}
               placeholder="Type Category here"
               className="mt-2 w-full rounded-lg bg-black/30 border border-white/10 px-3 py-2 text-sm text-primary_color outline-none"
             />
@@ -51,6 +77,10 @@ export default function ProductForm() {
               Brand
             </label>
             <input
+              onChange={(e) =>
+                setData((prev) => ({ ...prev, brand: e.target.value }))
+              }
+              value={data.brand}
               placeholder="Type Brand name here"
               className="mt-2 w-full rounded-lg bg-black/30 border border-white/10 px-3 py-2 text-sm text-primary_color outline-none"
             />
@@ -63,6 +93,7 @@ export default function ProductForm() {
               SKU
             </label>
             <input
+              value={data.sku}
               readOnly
               className="mt-2 w-full rounded-lg bg-black/30 border border-white/10 px-3 py-2 text-sm text-primary_color"
             />
@@ -72,6 +103,7 @@ export default function ProductForm() {
               Stock quantity
             </label>
             <input
+              value={data.stock}
               readOnly
               className="mt-2 w-full rounded-lg bg-black/30 border border-white/10 px-3 py-2 text-sm text-primary_color"
             />
@@ -84,7 +116,10 @@ export default function ProductForm() {
               Regular Price
             </label>
             <input
-              
+              onChange={(e) =>
+                setData((prev) => ({ ...prev, price: e.target.value }))
+              }
+              value={data.price}
               className="mt-2 w-full rounded-lg bg-black/30 border border-white/10 px-3 py-2 text-sm text-primary_color"
             />
           </div>
@@ -93,6 +128,10 @@ export default function ProductForm() {
               Sale Price
             </label>
             <input
+              onChange={(e) =>
+                setData((prev) => ({ ...prev, price: e.target.value }))
+              }
+              value={data.price}
               className="mt-2 w-full rounded-lg bg-black/30 border border-white/10 px-3 py-2 text-sm text-primary_color"
             />
           </div>
