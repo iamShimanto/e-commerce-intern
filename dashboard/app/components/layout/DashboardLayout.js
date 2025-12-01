@@ -25,7 +25,7 @@ export default function DashboardLayout({ children, user }) {
 
       <Sidebar />
 
-      <div className="flex-1 min-w-0 z-50">
+      <div className="flex-1 min-w-0 ">
         <Topbar
           user={user}
           sidebarOpen={sidebarOpen}

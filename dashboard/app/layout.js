@@ -23,7 +23,7 @@ export default async function RootLayout({ children }) {
         />
       </head>
       <body className="flex mt-20">
-        {!myCookie ? (
+        {myCookie ? (
           <Login />
         ) : (
           <>
